@@ -9,7 +9,7 @@ export type TRegisterUser = {
   name: string;
   email: string;
   premium: boolean
-  mobileNumber: string;
   password: string;
+  profilePhoto: string
   role: keyof typeof USER_ROLE;
 };

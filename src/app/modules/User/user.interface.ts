@@ -11,7 +11,6 @@ export type TUser = {
   password: string;
   status: keyof typeof USER_STATUS;
   passwordChangedAt?: Date;
-  mobileNumber?: string;
   profilePhoto?: string;
   createdAt?: Date;
   updatedAt?: Date;

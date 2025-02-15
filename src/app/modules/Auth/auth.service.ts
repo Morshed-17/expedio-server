@@ -18,6 +18,8 @@ const registerUser = async (payload: TRegisterUser) => {
 
   payload.role = USER_ROLE.USER;
   payload.premium = false
+  payload.profilePhoto = config.profile_photo as string
+
   //create new user
   const newUser = await User.create(payload);
 
@@ -28,8 +30,8 @@ const registerUser = async (payload: TRegisterUser) => {
     name: newUser.name,
     email: newUser.email,
     premium: newUser.premium,
-    mobileNumber: newUser.mobileNumber,
     role: newUser.role,
+    profilePhoto: newUser.profilePhoto,
     status: newUser.status,
   };
 
@@ -78,8 +80,8 @@ const loginUser = async (payload: TLoginUser) => {
     _id: user._id,
     name: user.name,
     email: user.email,
-    mobileNumber: user.mobileNumber,
     role: user.role,
+    profilePhoto: user.profilePhoto,
     premium: user.premium,
     status: user.status,
   };
@@ -180,7 +182,7 @@ const refreshToken = async (token: string) => {
     _id: user._id,
     name: user.name,
     email: user.email,
-    mobileNumber: user.mobileNumber,
+    profilePhoto: user.profilePhoto,
     role: user.role,
     premium: user.premium,
     status: user.status,

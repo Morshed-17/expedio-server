@@ -42,10 +42,6 @@ const userSchema = new Schema<TUser, IUserModel>(
     passwordChangedAt: {
       type: Date,
     },
-    mobileNumber: {
-      type: String,
-      required: true,
-    },
     profilePhoto: {
       type: String,
       default: null,
